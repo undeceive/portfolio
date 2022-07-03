@@ -1,5 +1,5 @@
 # Frank's portfolio
-(Work Progress)
+(Work in Progress)
 
 [https://undeceive.net/](https://undeceive.net/)
 
