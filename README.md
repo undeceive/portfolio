@@ -1,7 +1,7 @@
 # Frank's portfolio
 (Work in Progress)
 
-[https://undeceive-portfolio.netlify.app/](https://undeceive-portfolio.netlify.app/)
+[http://undeceive.io/](http://undeceive.io/)
 
 ## Stack
 
@@ -30,6 +30,6 @@ MIT License.
 
 You can create your own homepage for free without notifying me by forking this project under the following conditions:
 
-- Add a link to [https://undeceive-portfolio.netlify.app/](https://undeceive-portfolio.netlify.app/)
+- Add a link to [http://undeceive.io/](http://undeceive.io/)
 
 ---
