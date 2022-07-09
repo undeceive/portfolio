@@ -1,7 +1,7 @@
 # Frank's portfolio
 (Work in Progress)
 
-[https://undeceive.net/](https://undeceive.net/)
+[https://undeceive.io/](https://undeceive.io/)
 
 ## Stack
 
@@ -30,6 +30,6 @@ MIT License.
 
 You can create your own homepage for free without notifying me by forking this project under the following conditions:
 
-- Add a link to [https://undeceive.net/](https://undeceive.net/)
+- Add a link to [https://undeceive.io/](https://undeceive.io/)
 
 ---
