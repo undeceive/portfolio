@@ -14,4 +14,4 @@ Live Site: https://portfolio-undeceives-projects.vercel.app/
 
 ## Status
 
-Work in progress. Currently being rebuilt and modernized from an older React/Sass/Sanity portfolio.
+Work in progress. Rebuilt from an older React/Sass/Sanity portfolio into a faster modern Vite portfolio with a cleaner personal developer homepage style.
