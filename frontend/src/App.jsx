@@ -5,7 +5,7 @@ const projects = [
     title: "OrderOps Dashboard",
     status: "In Progress",
     description:
-      "A full-stack operations dashboard inspired by real e-commerce and warehouse workflows. Designed to track marketplace orders, fulfillment status, shipping issues, and operational data.",
+      "A full-stack operations dashboard inspired by e-commerce marketplace maintenance workflows. Designed to track product listings, marketplace issues, inventory status, price updates, and platform maintenance tasks.",
     tech: ["React", "Node.js", "Express", "SQLite", "JavaScript", "Git"],
     link: "https://github.com/undeceive/orderops-dashboard",
   },
@@ -62,11 +62,16 @@ const skills = [
   "Vite",
   "npm",
   "QuickBooks",
-  "Order Processing",
-  "Shipping Coordination",
-  "Customer Service",
+  "eBay",
+  "Shopify",
+  "Amazon",
+  "Zoro",
+  "TopDawg",
+  "Product Listings",
+  "Price Updates",
+  "Image Updates",
   "Inventory Tracking",
-  "Marketplace Listings",
+  "Marketplace Maintenance",
   "Training",
   "Documentation",
 ];
@@ -79,8 +84,8 @@ function App() {
         <h1>Frank Garcia Sarmiento</h1>
         <p className="role">Computer Science Student and Aspiring Software Developer</p>
         <p className="subtitle">
-          I build practical software for e-commerce operations, internal
-          business workflows, data organization, and automation.
+          I build practical software for e-commerce marketplace workflows,
+          internal business tools, data organization, and automation.
         </p>
 
         <div className="heroActions">
@@ -104,28 +109,29 @@ function App() {
       <section className="section" id="summary">
         <div className="sectionHeader">
           <p className="eyebrow">Professional Summary</p>
-          <h2>Software development with real operations experience.</h2>
+          <h2>Software development with real e-commerce platform experience.</h2>
         </div>
 
         <p>
-          I am a Computer Science student with hands-on experience in e-commerce
-          operations, customer service, order processing, and technical workflows.
-          I am currently building full-stack software projects using React,
-          Node.js, Express, SQLite, Git, and Linux.
+          I am a Computer Science student with hands-on experience maintaining
+          e-commerce websites and marketplace storefronts. My work includes
+          updating product listings, prices, images, descriptions, and inventory
+          information across platforms such as eBay, Shopify, Amazon, Zoro, and
+          TopDawg.
         </p>
 
         <p>
-          My work experience includes marketplace support, shipping coordination,
-          spreadsheet-based reporting, product data accuracy, and training new
-          team members. I am interested in software development, IT support,
-          technical operations, cybersecurity, and open source technologies.
+          I am currently building full-stack software projects using React,
+          Node.js, Express, SQLite, Git, and Linux. I am interested in software
+          development, IT support, e-commerce systems, technical operations, and
+          cybersecurity.
         </p>
       </section>
 
       <section className="section" id="experience">
         <div className="sectionHeader">
           <p className="eyebrow">Experience</p>
-          <h2>E-Commerce and Operations Support</h2>
+          <h2>E-Commerce Website and Marketplace Support</h2>
         </div>
 
         <div className="experienceCard">
@@ -139,25 +145,26 @@ function App() {
 
           <ul className="resumeList">
             <li>
-              Supported daily e-commerce order operations across marketplace
-              platforms including Amazon, eBay, Shopify, Temu, Zoro, and related
-              sales channels.
+              Maintained online product listings across eBay, Shopify, Amazon,
+              Zoro, TopDawg, and other e-commerce sales platforms.
             </li>
             <li>
-              Assisted with order review, shipping coordination, product data
-              accuracy, and fulfillment workflows.
+              Updated product prices, photos, descriptions, and listing
+              information to keep storefronts accurate and current.
             </li>
             <li>
-              Used ShipStation-style order processing workflows to review orders,
-              prepare order information, and support warehouse fulfillment.
+              Reviewed marketplace pages to identify broken listings, missing
+              information, incorrect pricing, image issues, and product display
+              problems.
             </li>
             <li>
-              Trained a new hire on daily order-processing routines, platform
-              workflows, internal procedures, and customer service expectations.
+              Tracked product inventory information and helped keep online
+              listings aligned with available stock.
             </li>
             <li>
-              Maintained spreadsheets for tracking orders, inventory details,
-              product issues, and operational information.
+              Trained a new hire on the same platform maintenance workflow,
+              including updating listings, checking inventory information,
+              changing prices, and reviewing product pages for issues.
             </li>
           </ul>
         </div>
@@ -224,8 +231,8 @@ function App() {
             <p>Cybersecurity, Linux systems, IT support, and open source technologies.</p>
           </div>
           <div>
-            <h3>Operations Automation</h3>
-            <p>E-commerce automation, operations dashboards, and data organization.</p>
+            <h3>E-Commerce Automation</h3>
+            <p>Marketplace tools, listing maintenance workflows, and data organization.</p>
           </div>
         </div>
       </section>
@@ -238,7 +245,8 @@ function App() {
 
         <p>
           I am currently building software projects and looking for opportunities
-          to grow in software development, IT, and technical operations.
+          to grow in software development, IT, e-commerce systems, and technical
+          operations.
         </p>
 
         <div className="heroActions">
