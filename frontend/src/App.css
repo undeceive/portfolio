@@ -947,3 +947,67 @@ footer {
   pointer-events: none;
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.35));
 }
+
+/* Resize technology balls so they do not get cut off */
+.techCanvas {
+  width: 136px !important;
+  height: 136px !important;
+  overflow: visible !important;
+}
+
+.techLogoImage {
+  width: 38px !important;
+  height: 38px !important;
+}
+
+.techBallCard {
+  min-height: 168px;
+}
+
+/* Remove technology names and attach logos inside the 3D canvas */
+.techBallCard p,
+.techLabel {
+  display: none !important;
+}
+
+.techCanvas {
+  width: 136px !important;
+  height: 136px !important;
+  overflow: visible !important;
+}
+
+.techCanvas canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.techLogoImage {
+  display: none !important;
+}
+
+.techLogoInCanvas {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.35));
+  user-select: none;
+}
+
+/* True decal version: remove floating image labels */
+.techLogoImage,
+.techLogoInCanvas,
+.techBallCard p,
+.techLabel {
+  display: none !important;
+}
+
+.techCanvas {
+  width: 136px !important;
+  height: 136px !important;
+  overflow: visible !important;
+}
+
+.techCanvas canvas {
+  width: 100% !important;
+  height: 100% !important;
+}

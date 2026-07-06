@@ -6,21 +6,21 @@ import {
 } from "react-icons/fa";
 import { Suspense, useEffect, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Float, OrbitControls } from "@react-three/drei";
+import { Decal, Float, OrbitControls, Preload, useTexture } from "@react-three/drei";
 import { motion } from "framer-motion";
 import "./App.css";
 
-import htmlLogo from "./assets/tech/html.svg";
-import cssLogo from "./assets/tech/css.svg";
-import javascriptLogo from "./assets/tech/javascript.svg";
-import typescriptLogo from "./assets/tech/typescript.svg";
-import reactLogo from "./assets/tech/react.svg";
-import nodeLogo from "./assets/tech/node.svg";
-import expressLogo from "./assets/tech/express.svg";
-import sqliteLogo from "./assets/tech/sqlite.svg";
-import gitLogo from "./assets/tech/git.svg";
-import linuxLogo from "./assets/tech/linux.svg";
-import viteLogo from "./assets/tech/vite.svg";
+import htmlLogo from "./assets/tech-png/html.png";
+import cssLogo from "./assets/tech-png/css.png";
+import javascriptLogo from "./assets/tech-png/javascript.png";
+import typescriptLogo from "./assets/tech-png/typescript.png";
+import reactLogo from "./assets/tech-png/react.png";
+import nodeLogo from "./assets/tech-png/node.png";
+import expressLogo from "./assets/tech-png/express.png";
+import sqliteLogo from "./assets/tech-png/sqlite.png";
+import gitLogo from "./assets/tech-png/git.png";
+import linuxLogo from "./assets/tech-png/linux.png";
+import viteLogo from "./assets/tech-png/vite.png";
 
 const services = [
   {
@@ -208,19 +208,31 @@ function HeroCanvas() {
   );
 }
 
-function Ball() {
-  return (
-    <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>
-      <ambientLight intensity={0.55} />
-      <directionalLight position={[0, 0, 2]} intensity={1.2} />
+function Ball({ imgUrl }) {
+  const [decal] = useTexture([imgUrl]);
 
-      <mesh castShadow receiveShadow scale={2.55}>
+  return (
+    <Float speed={1.75} rotationIntensity={1} floatIntensity={1.8}>
+      <ambientLight intensity={0.35} />
+      <directionalLight position={[0, 0, 0.05]} />
+
+      <mesh castShadow receiveShadow scale={2.15}>
         <icosahedronGeometry args={[1, 1]} />
+
         <meshStandardMaterial
           color="#fff8eb"
           polygonOffset
           polygonOffsetFactor={-5}
           flatShading
+        />
+
+        <Decal
+          position={[0, 0, 1]}
+          rotation={[2 * Math.PI, 0, 6.25]}
+          scale={1.05}
+          map={decal}
+          flatShading
+          transparent
         />
       </mesh>
     </Float>
@@ -231,17 +243,14 @@ function TechBall({ tech }) {
   return (
     <div className="techBallCard">
       <div className="techCanvas">
-        <Canvas camera={{ position: [0, 0, 6], fov: 45 }}>
-          <ambientLight intensity={0.85} />
-          <pointLight position={[3, 4, 3]} intensity={1.4} />
-          <Ball />
-          <OrbitControls enableZoom={false} enablePan={false} rotateSpeed={0.65} />
+        <Canvas frameloop="demand" camera={{ position: [0, 0, 6.2], fov: 45 }} gl={{ preserveDrawingBuffer: true }}>
+          <Suspense fallback={null}>
+            <OrbitControls enableZoom={false} enablePan={false} rotateSpeed={0.65} />
+            <Ball imgUrl={tech.icon} />
+            <Preload all />
+          </Suspense>
         </Canvas>
-
-        <img className="techLogoImage" src={tech.icon} alt={tech.name} />
       </div>
-
-      <p>{tech.name}</p>
     </div>
   );
 }
