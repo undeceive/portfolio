@@ -1,26 +1,26 @@
-import { useEffect, useRef, useState } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
-import { motion } from "framer-motion";
 import {
   FaCode,
   FaShoppingCart,
   FaServer,
-  FaHtml5,
-  FaCss3Alt,
-  FaReact,
-  FaNodeJs,
-  FaGitAlt,
   FaLinux,
 } from "react-icons/fa";
-import {
-  SiJavascript,
-  SiTypescript,
-  SiExpress,
-  SiSqlite,
-  SiVite,
-} from "react-icons/si";
+import { Suspense, useEffect, useRef, useState } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { Float, OrbitControls } from "@react-three/drei";
+import { motion } from "framer-motion";
 import "./App.css";
+
+import htmlLogo from "./assets/tech/html.svg";
+import cssLogo from "./assets/tech/css.svg";
+import javascriptLogo from "./assets/tech/javascript.svg";
+import typescriptLogo from "./assets/tech/typescript.svg";
+import reactLogo from "./assets/tech/react.svg";
+import nodeLogo from "./assets/tech/node.svg";
+import expressLogo from "./assets/tech/express.svg";
+import sqliteLogo from "./assets/tech/sqlite.svg";
+import gitLogo from "./assets/tech/git.svg";
+import linuxLogo from "./assets/tech/linux.svg";
+import viteLogo from "./assets/tech/vite.svg";
 
 const services = [
   {
@@ -67,17 +67,17 @@ const experiences = [
 ];
 
 const technologies = [
-  { name: "HTML5", icon: FaHtml5, color: "#e34f26" },
-  { name: "CSS3", icon: FaCss3Alt, color: "#1572b6" },
-  { name: "JavaScript", icon: SiJavascript, color: "#f7df1e" },
-  { name: "TypeScript", icon: SiTypescript, color: "#3178c6" },
-  { name: "React", icon: FaReact, color: "#61dafb" },
-  { name: "Node.js", icon: FaNodeJs, color: "#83cd29" },
-  { name: "Express", icon: SiExpress, color: "#ffffff" },
-  { name: "SQLite", icon: SiSqlite, color: "#0f80cc" },
-  { name: "Git", icon: FaGitAlt, color: "#f05032" },
-  { name: "Linux", icon: FaLinux, color: "#fbc02d" },
-  { name: "Vite", icon: SiVite, color: "#bd34fe" },
+  { name: "HTML5", icon: htmlLogo },
+  { name: "CSS3", icon: cssLogo },
+  { name: "JavaScript", icon: javascriptLogo },
+  { name: "TypeScript", icon: typescriptLogo },
+  { name: "React", icon: reactLogo },
+  { name: "Node.js", icon: nodeLogo },
+  { name: "Express", icon: expressLogo },
+  { name: "SQLite", icon: sqliteLogo },
+  { name: "Git", icon: gitLogo },
+  { name: "Linux", icon: linuxLogo },
+  { name: "Vite", icon: viteLogo },
 ];
 
 const projects = [
@@ -208,62 +208,37 @@ function HeroCanvas() {
   );
 }
 
-function TechSphere({ color }) {
-  const group = useRef();
-
-  useFrame((state) => {
-    const time = state.clock.getElapsedTime();
-
-    if (group.current) {
-      group.current.rotation.y = time * 0.42;
-      group.current.rotation.x = Math.sin(time * 0.6) * 0.16;
-    }
-  });
-
+function Ball() {
   return (
-    <group ref={group}>
-      <mesh scale={1.55}>
-        <icosahedronGeometry args={[1, 2]} />
-        <meshStandardMaterial
-          color={color}
-          metalness={0.2}
-          roughness={0.34}
-          flatShading
-          emissive={color}
-          emissiveIntensity={0.08}
-        />
-      </mesh>
+    <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>
+      <ambientLight intensity={0.55} />
+      <directionalLight position={[0, 0, 2]} intensity={1.2} />
 
-      <mesh scale={1.57}>
-        <icosahedronGeometry args={[1, 2]} />
+      <mesh castShadow receiveShadow scale={2.55}>
+        <icosahedronGeometry args={[1, 1]} />
         <meshStandardMaterial
-          color="#ffffff"
-          wireframe
-          transparent
-          opacity={0.12}
+          color="#fff8eb"
+          polygonOffset
+          polygonOffsetFactor={-5}
+          flatShading
         />
       </mesh>
-    </group>
+    </Float>
   );
 }
 
 function TechBall({ tech }) {
-  const Icon = tech.icon;
-
   return (
     <div className="techBallCard">
       <div className="techCanvas">
-        <Canvas camera={{ position: [0, 0, 5.2], fov: 45 }}>
-          <ambientLight intensity={0.9} />
-          <pointLight position={[3, 4, 3]} intensity={1.8} />
-          <pointLight position={[-3, -2, 2]} intensity={0.65} color={tech.color} />
-          <TechSphere color={tech.color} />
+        <Canvas camera={{ position: [0, 0, 6], fov: 45 }}>
+          <ambientLight intensity={0.85} />
+          <pointLight position={[3, 4, 3]} intensity={1.4} />
+          <Ball />
           <OrbitControls enableZoom={false} enablePan={false} rotateSpeed={0.65} />
         </Canvas>
 
-        <div className="techLogoOnBall" style={{ color: tech.color }}>
-          <Icon />
-        </div>
+        <img className="techLogoImage" src={tech.icon} alt={tech.name} />
       </div>
 
       <p>{tech.name}</p>

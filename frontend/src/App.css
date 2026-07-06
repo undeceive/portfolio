@@ -886,3 +886,64 @@ footer {
   width: 34px;
   height: 34px;
 }
+
+/* Tutorial-style technology decal balls */
+.techGrid {
+  align-items: start;
+}
+
+.techBallCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.techCanvas {
+  width: 112px;
+  height: 112px;
+  cursor: grab;
+}
+
+.techCanvas:active {
+  cursor: grabbing;
+}
+
+.techCanvas canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.techBallCard p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+/* Force SVG tech logos to show centered on the 3D balls */
+.techCanvas {
+  position: relative;
+  width: 118px;
+  height: 118px;
+  cursor: grab;
+}
+
+.techCanvas canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.techLogoImage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.35));
+}
