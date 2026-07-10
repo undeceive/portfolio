@@ -9,6 +9,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Decal, Float, OrbitControls, Preload, useTexture } from "@react-three/drei";
 import { motion } from "framer-motion";
 import "./App.css";
+import profilePhoto from "./assets/frank-profile.png";
 
 import htmlLogo from "./assets/tech-png/html.png";
 import cssLogo from "./assets/tech-png/css.png";
@@ -303,6 +304,19 @@ function App() {
 
       <section className="hero" id="home">
         <motion.div className="heroText" initial="hidden" animate="visible" variants={stagger}>
+
+          <motion.div
+            className="profilePhotoCard"
+            initial={{ opacity: 0, y: 24, scale: 0.94 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ delay: 0.65, duration: 0.55 }}
+          >
+            <img src={profilePhoto} alt="Frank Garcia Sarmiento" />
+            <div>
+              <strong>Frank Garcia Sarmiento</strong>
+              <span>E-Commerce + Web Dev</span>
+            </div>
+          </motion.div>
           <motion.h1 variants={fadeUp}>
             Hi, I&apos;m <span>Frank</span>
           </motion.h1>

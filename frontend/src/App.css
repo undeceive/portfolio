@@ -1011,3 +1011,343 @@ footer {
   width: 100% !important;
   height: 100% !important;
 }
+
+/* Profile photo card in hero */
+.heroModel {
+  position: relative;
+}
+
+.profilePhotoCard {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  max-width: 310px;
+  padding: 12px 14px;
+  border: 1px solid rgba(196, 181, 253, 0.26);
+  border-radius: 999px;
+  background: rgba(15, 15, 30, 0.72);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.34);
+}
+
+.profilePhotoCard img {
+  width: 58px;
+  height: 58px;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 2px solid rgba(196, 181, 253, 0.72);
+  box-shadow: 0 0 28px rgba(124, 58, 237, 0.42);
+}
+
+.profilePhotoCard div {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+
+.profilePhotoCard strong {
+  color: var(--text);
+  font-size: 0.9rem;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.profilePhotoCard span {
+  color: var(--muted);
+  font-size: 0.74rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+@media (max-width: 760px) {
+  .profilePhotoCard {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin: 18px auto 0;
+    width: fit-content;
+  }
+
+  .profilePhotoCard img {
+    width: 52px;
+    height: 52px;
+  }
+
+  .profilePhotoCard strong,
+  .profilePhotoCard span {
+    white-space: normal;
+  }
+}
+
+/* Slightly cleaner/larger hero profile badge */
+.profilePhotoCard {
+  right: 34px !important;
+  bottom: 18px !important;
+  padding: 13px 16px !important;
+  gap: 13px !important;
+  border-color: rgba(196, 181, 253, 0.34) !important;
+  background: rgba(12, 12, 26, 0.78) !important;
+}
+
+.profilePhotoCard img {
+  width: 64px !important;
+  height: 64px !important;
+}
+
+.profilePhotoCard strong {
+  font-size: 0.95rem !important;
+}
+
+.profilePhotoCard span {
+  font-size: 0.78rem !important;
+}
+
+/* Final hero profile badge placement tweak */
+.profilePhotoCard {
+  right: 70px !important;
+  bottom: 42px !important;
+}
+
+/* Move profile badge to the left hero text area */
+.heroText .profilePhotoCard {
+  position: relative !important;
+  right: auto !important;
+  bottom: auto !important;
+  width: fit-content !important;
+  margin: 0 0 22px 0 !important;
+  padding: 11px 14px !important;
+  transform: none !important;
+}
+
+.heroText .profilePhotoCard img {
+  width: 54px !important;
+  height: 54px !important;
+}
+
+.heroText .profilePhotoCard strong {
+  font-size: 0.9rem !important;
+}
+
+.heroText .profilePhotoCard span {
+  font-size: 0.75rem !important;
+}
+
+/* =========================================================
+   Mobile polish for iPhone / Android
+   Keeps desktop design, improves small screens
+   ========================================================= */
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@media (max-width: 760px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  nav,
+  .navbar,
+  .header {
+    width: calc(100% - 28px) !important;
+    margin: 12px auto 0 !important;
+    padding: 12px 14px !important;
+    gap: 12px !important;
+  }
+
+  nav a,
+  .navbar a,
+  .header a {
+    font-size: 0.78rem !important;
+  }
+
+  .logo,
+  .brand,
+  .navLogo {
+    font-size: 0.8rem !important;
+  }
+
+  .hero {
+    min-height: auto !important;
+    padding-top: 78px !important;
+    padding-bottom: 48px !important;
+    display: grid !important;
+    gap: 28px !important;
+  }
+
+  .heroText {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+
+  .heroText h1,
+  .hero h1,
+  h1 {
+    font-size: clamp(3rem, 18vw, 4.4rem) !important;
+    line-height: 0.92 !important;
+    letter-spacing: -0.075em !important;
+  }
+
+  .heroText p,
+  .hero p {
+    max-width: 100% !important;
+    font-size: 1rem !important;
+    line-height: 1.55 !important;
+  }
+
+  .heroModel {
+    width: 100% !important;
+    max-width: 360px !important;
+    height: 280px !important;
+    margin: 0 auto !important;
+  }
+
+  .heroModel canvas {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .heroText .profilePhotoCard {
+    margin-bottom: 18px !important;
+    padding: 10px 12px !important;
+    max-width: calc(100vw - 48px) !important;
+  }
+
+  .heroText .profilePhotoCard img {
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  .heroText .profilePhotoCard strong {
+    font-size: 0.82rem !important;
+  }
+
+  .heroText .profilePhotoCard span {
+    font-size: 0.7rem !important;
+  }
+
+  section,
+  .section,
+  .about,
+  .work,
+  .projects,
+  .contact {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+
+  .sectionTitle,
+  section h2,
+  h2 {
+    font-size: clamp(2.1rem, 12vw, 3rem) !important;
+    line-height: 1 !important;
+  }
+
+  .services,
+  .serviceGrid,
+  .overviewCards,
+  .projectGrid,
+  .projectsGrid,
+  .techGrid,
+  .technologies,
+  .techList {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .serviceCard,
+  .overviewCard,
+  .projectCard,
+  .experienceCard,
+  .timelineCard {
+    width: 100% !important;
+    padding: 20px !important;
+  }
+
+  .techGrid,
+  .technologies,
+  .techList {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    justify-items: center !important;
+    max-width: 320px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .techCanvas {
+    width: 104px !important;
+    height: 104px !important;
+  }
+
+  .techBallCard {
+    min-height: 112px !important;
+  }
+
+  .projectImage {
+    min-height: 130px !important;
+  }
+
+  footer {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+    text-align: center !important;
+  }
+}
+
+@media (max-width: 430px) {
+  nav,
+  .navbar,
+  .header {
+    width: calc(100% - 20px) !important;
+    padding: 10px 12px !important;
+  }
+
+  nav a,
+  .navbar a,
+  .header a {
+    font-size: 0.72rem !important;
+  }
+
+  .heroText h1,
+  .hero h1,
+  h1 {
+    font-size: clamp(2.75rem, 17vw, 3.8rem) !important;
+  }
+
+  .heroText p,
+  .hero p {
+    font-size: 0.95rem !important;
+  }
+
+  .heroModel {
+    max-width: 315px !important;
+    height: 245px !important;
+  }
+
+  .heroText .profilePhotoCard {
+    gap: 10px !important;
+  }
+
+  .heroText .profilePhotoCard img {
+    width: 44px !important;
+    height: 44px !important;
+  }
+
+  .heroText .profilePhotoCard strong {
+    font-size: 0.78rem !important;
+  }
+
+  .heroText .profilePhotoCard span {
+    font-size: 0.66rem !important;
+  }
+}
