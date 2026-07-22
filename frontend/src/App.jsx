@@ -22,6 +22,7 @@ import sqliteLogo from "./assets/tech-png/sqlite.png";
 import gitLogo from "./assets/tech-png/git.png";
 import linuxLogo from "./assets/tech-png/linux.png";
 import viteLogo from "./assets/tech-png/vite.png";
+import orderopsDashboardImage from "./assets/projects/orderops-dashboard.png";
 
 const services = [
   {
@@ -85,9 +86,12 @@ const projects = [
   {
     title: "OrderOps Dashboard",
     description:
-      "A full-stack marketplace sync dashboard inspired by a real business idea. It tracks products, pricing, inventory, image status, and sync issues across sales channels.",
-    tags: ["React", "Node.js", "Express", "SQLite"],
+      "A full-stack marketplace operations dashboard built with React, Express, and SQLite. It tracks products, orders, marketplace listings, inventory mismatches, price mismatches, missing images, and sync issues for e-commerce workflows. Includes CSV import, automatic issue detection, duplicate prevention, a Last Import Summary card, README screenshots, and a public roadmap.",
+    tags: ["React", "Node.js", "Express", "SQLite", "CSV Import", "Git", "Linux"],
     link: "https://github.com/undeceive/orderops-dashboard",
+    caseStudy:
+      "https://medium.com/@undeceive/creating-orderops-dashboard-a-full-stack-tool-for-marketplace-operations-0d2282d4df85",
+    image: orderopsDashboardImage,
   },
   {
     title: "Portfolio Website",
@@ -483,7 +487,16 @@ function App() {
                 variants={fadeUp}
                 whileHover={{ y: -8 }}
               >
-                <div className="projectImage" aria-hidden="true"></div>
+                <div
+                  className={`projectImage ${
+                    project.image ? "projectImageWithScreenshot" : ""
+                  }`}
+                  aria-hidden={!project.image}
+                >
+                  {project.image && (
+                    <img src={project.image} alt={`${project.title} screenshot`} />
+                  )}
+                </div>
 
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
@@ -494,9 +507,17 @@ function App() {
                   ))}
                 </div>
 
-                <a href={project.link} target="_blank" rel="noreferrer">
-                  View project
-                </a>
+                <div className="projectLinks">
+                  <a href={project.link} target="_blank" rel="noreferrer">
+                    View project
+                  </a>
+
+                  {project.caseStudy && (
+                    <a href={project.caseStudy} target="_blank" rel="noreferrer">
+                      Case Study
+                    </a>
+                  )}
+                </div>
               </motion.article>
             ))}
           </div>
